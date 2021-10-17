@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./css/NavBar.css";
-import logo from "./asset/logo.png";
+import logo from "./asset/logosmall.png";
 class NavBar extends React.Component {
   render() {
     return (
-      <div className="NavBar">
-        <img src={logo} alt="logo" width="8%"></img>
-        <div className="link">
-          <Link to="/">HOME</Link>
-        </div>
-        <div className="link">
-          <Link to="/RaQ">RAQ</Link>
-        </div>
-        <div className="link">
-          <Link to="/About">ABOUT</Link>
+      <div className="flex justify-between">
+        <a href="https://github.com">
+          <img className="m-6" src={logo} alt="logo" width="40%"></img>
+        </a>
+        <div className="flex p-6">
+          <Link className="p-4" to="/">
+            HOME
+          </Link>
+          <Link className="p-4" to="/About">
+            ABOUT
+          </Link>
         </div>
       </div>
     );

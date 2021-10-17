@@ -26,14 +26,11 @@ let SearchResult = () => {
     } else {
       // console.log(data.items);
       return (
-        <div>
-          <h1>this is the search result page</h1>
-          <p>this is what you search {id}</p>
-          <ul>
-            {data.items.map((element, i) => (
-              <RenderData datum={element} key={i} />
-            ))}
-          </ul>
+        <div className="flex-col ml-8">
+          <p>search result for {id}</p>
+          {data.items.map((element, i) => (
+            <RenderData datum={element} key={i} />
+          ))}
         </div>
       );
     }
