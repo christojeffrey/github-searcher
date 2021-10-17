@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Home";
+import NavBar from "./NavBar";
+import RaQ from "./RaQ";
+import About from "./About";
+import SearchResult from "./SearchResult";
+import RepoDetail from "./RepoDetail";
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchQuery: "github",
+    };
+  }
+  setSearchQuery(a) {
+    this.setState({ searchQuery: a });
+  }
+  render() {
+    return (
+      <div>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path="/search/:id">
+              <SearchResult />
+            </Route>
+            <Route path="/repo/:username/:repo">
+              <RepoDetail />
+            </Route>
+            <Route exact path="/RaQ">
+              <RaQ />
+            </Route>
+            <Route exact path="/About">
+              <About />
+            </Route>
+            <Route exact path="/">
+              <Home searchQuery={this.state.searchQuery} setSearchQuery={(a) => this.setSearchQuery(a)} />
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
