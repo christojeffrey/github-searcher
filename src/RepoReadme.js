@@ -4,15 +4,15 @@ import React from "react";
 let RepoReadme = ({ url }) => {
   let { data, isPending, Error } = useFetch(url + "/readme");
   let readme = "";
-  console.log(data == null);
+  // console.log(data == null);
   if (!isPending && !Error && data != null) {
     readme = atob(data.content);
     // readme = markdown.toHTML(readme);
   }
   //   readme = `# Hello, *world*!`;
   return (
-    <div>
-      <ReactMarkdown children={readme} />
+    <div className="unreset">
+      <ReactMarkdown skipHtml={true}>{readme}</ReactMarkdown>
     </div>
   );
 };

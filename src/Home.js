@@ -6,7 +6,7 @@ class Home extends React.Component {
     this.setState({
       value: event.target.value,
     });
-    console.log(event.target);
+    // console.log(event.target);
   }
   render() {
     return (
@@ -14,11 +14,11 @@ class Home extends React.Component {
         <div className="self-center pl-20">
           <form autoComplete="off">
             <div>
-              <label className="text-5xl flex-grow" for="search">
+              <label className="text-6xl flex-grow" for="search">
                 search a repo
               </label>
             </div>
-            <div className="border-b-2 pt-10">
+            <div className="border-b-2 pt-10 text-2xl">
               <input
                 className="appearance-none bg-transparent border-none focus:outline-none"
                 placeholder="Jane Doe"
@@ -29,7 +29,7 @@ class Home extends React.Component {
                 onChange={(e) => this.props.setSearchQuery(e.target.value)}
               />
               <Link to={"search/" + this.props.searchQuery}>
-                <button className="ml-12 bg-transparent hover:text-red-500" type="submit" value="Submit" disabled={this.props.searchQuery === ""}>
+                <button className="bg-transparent hover:text-red-500" type="submit" value="Submit" disabled={this.props.searchQuery === ""}>
                   submit
                 </button>
               </Link>

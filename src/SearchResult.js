@@ -11,11 +11,7 @@ let SearchResult = () => {
   const url = "https://api.github.com/search/repositories";
   const { data, isPending, Error } = useFetch(url + queryString);
   if (isPending) {
-    return (
-      <div>
-        <h1>pending</h1>
-      </div>
-    );
+    return <div className="text-3xl p-5">loading...</div>;
   } else {
     if (Error) {
       return (
@@ -27,7 +23,7 @@ let SearchResult = () => {
       // console.log(data.items);
       return (
         <div className="flex-col ml-8">
-          <p className="text-3xl m-3">search result for {id}</p>
+          <div className="text-3xl m-3">search result for {id}</div>
           {data.items.map((element, i) => (
             <RenderData datum={element} key={i} />
           ))}
