@@ -27,7 +27,7 @@ let SearchResult = () => {
       // console.log(data.items);
       return (
         <div className="flex-col ml-8">
-          <p>search result for {id}</p>
+          <p className="text-3xl m-3">search result for {id}</p>
           {data.items.map((element, i) => (
             <RenderData datum={element} key={i} />
           ))}

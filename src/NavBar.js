@@ -8,11 +8,11 @@ class NavBar extends React.Component {
         <a href="https://github.com">
           <img className="m-6" src={logo} alt="logo" width="40%"></img>
         </a>
-        <div className="flex p-6">
-          <Link className="p-4" to="/">
+        <div className="flex p-6 ">
+          <Link className="p-4 hover:text-red-500" to="/">
             HOME
           </Link>
-          <Link className="p-4" to="/About">
+          <Link className="p-4 hover:text-red-500" to="/About">
             ABOUT
           </Link>
         </div>
