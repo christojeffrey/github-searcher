@@ -29,7 +29,7 @@ class Home extends React.Component {
                 onChange={(e) => this.props.setSearchQuery(e.target.value)}
               />
               <Link to={"search/" + this.props.searchQuery}>
-                <button className="ml-12 bg-transparent hover:text-red-500" type="submit" value="Submit" disabled={this.props.searchQuery == ""}>
+                <button className="ml-12 bg-transparent hover:text-red-500" type="submit" value="Submit" disabled={this.props.searchQuery === ""}>
                   submit
                 </button>
               </Link>
