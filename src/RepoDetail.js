@@ -1,4 +1,4 @@
-import { useParams, useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useFetch from "./useFetch";
 import RepoContributors from "./RepoContributors";
 import RepoReadme from "./RepoReadme";
@@ -8,9 +8,8 @@ let RepoDetail = () => {
   let { username, repo } = useParams();
   let url = "https://api.github.com/repos/";
   url = url + username + "/" + repo;
-  let { data, isPending, Error } = useFetch(url);
+  let { data, isPending } = useFetch(url);
   // console.log(data);
-  let location = useLocation();
   // console.log("location " + location.pathname);
   if (isPending) {
     return <div className="text-3xl p-5">loading...</div>;

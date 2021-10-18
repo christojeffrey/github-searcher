@@ -4,7 +4,7 @@ let OneContributor = ({ element }) => {
   return (
     // <div className="flex flex-shrink">
     <a href={element.html_url} className="flex flex-shrink justify-center">
-      <img className="rounded-full m-2 w-3/4" src={element.avatar_url}></img>
+      <img className="rounded-full m-2 w-3/4" alt={element.login} src={element.avatar_url}></img>
       {/* {console.log(element)} */}
     </a>
     // </div>

@@ -11,14 +11,14 @@ class Home extends React.Component {
   render() {
     return (
       <div className="flex justify-between ml-8">
-        <div className="self-center pl-20">
+        <div className="self-center m-20 p-5 rounded-lg">
           <form autoComplete="off">
             <div>
               <label className="text-6xl flex-grow" for="search">
                 search a repo
               </label>
             </div>
-            <div className="border-b-2 pt-10 text-2xl">
+            <div className="border-b-2 pt-10 text-2xl ">
               <input
                 className="appearance-none bg-transparent border-none focus:outline-none"
                 placeholder="Jane Doe"
@@ -36,7 +36,7 @@ class Home extends React.Component {
             </div>
           </form>
         </div>
-        <div>
+        <div className="m-20 mt-10">
           <img src={logo} alt="logo" width="500px"></img>
         </div>
       </div>

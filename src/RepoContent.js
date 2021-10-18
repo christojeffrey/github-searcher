@@ -1,5 +1,4 @@
 import useFetch from "./useFetch";
-import { Link } from "react-router-dom";
 import DirLogo from "./asset/folder.png";
 import FileLogo from "./asset/file.png";
 let Icon = ({ type }) => {
@@ -19,7 +18,7 @@ let Icon = ({ type }) => {
 let RepoContent = ({ username, repo }) => {
   let url = "https://api.github.com/repos/" + username + "/" + repo + "/contents";
   // console.log(url);
-  let { data, isPending, Error } = useFetch(url);
+  let { data, isPending } = useFetch(url);
   if (!isPending) {
     // console.log("repo content " + typeof data);
     // console.log(data);
